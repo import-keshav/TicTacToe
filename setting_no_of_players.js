@@ -22,5 +22,6 @@ var change_player_score_text = function() {
 
 
 $(document).on('change', '#number_of_player', function() {
-  change_player_score_text()
+  change_player_score_text();
+  restart();
 })

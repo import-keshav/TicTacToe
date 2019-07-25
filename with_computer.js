@@ -12,6 +12,41 @@ var get_random_edges_box_id = function() {
 };
 
 
+var can_win = function(box_id) {
+  var num_id = box_id.split("box_")[1];
+  var num_of_ways = possible_ways[num_id];
+  for (way in num_of_ways) {
+    ids = num_of_ways[way].split('');
+    if ($('#box_' + ids[0])[0].childElementCount === 1 &&
+    		$('#box_' + ids[1])[0].childElementCount === 0) {
+      if ($('#box_' + ids[0]).children()[0].innerText === "X") {
+        return {
+        	'is_win': true,
+        	'ids': ids[1]
+        }
+      }
+    }
+    if ($('#box_' + ids[0])[0].childElementCount === 0 &&
+    		$('#box_' + ids[1])[0].childElementCount === 1) {
+      if ($('#box_' + ids[1]).children()[0].innerText === "X") {
+        return {
+        	'is_win': true,
+        	'ids': ids[0]
+        }
+      }
+    }
+  }
+};
+
+
+var find_empty_relevent_box_id = function(ids) {
+	if ($('#box_' + ids[0]).children()[0].innerText === "X") {
+		return ids[1]
+	}
+	return ids[0];
+}
+
+
 var first_attempt = function() {
 	if ($('#box_5').children().length === 0) {
 		call_click(5);
@@ -29,8 +64,13 @@ var first_attempt = function() {
 };
 
 
-var enter_computer_response = function() {
+var enter_computer_response = function(player_response_box_id) {	
 	if (game_counter === 1) {
 		first_attempt();
+		return;
+	}
+	var can_player_win = can_win(player_response_box_id);
+	if (can_player_win['is_win']) {
+		call_click(can_player_win.ids);
 	}
 };

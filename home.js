@@ -46,13 +46,11 @@ var is_win = function(box_id) {
   var num_of_ways = possible_ways[num_id];
   for (way in num_of_ways) {
       ids = num_of_ways[way].split('');
-      try {
+      if($('#box_' + ids[0]).children().length !=0 && $('#box_' + ids[1]).children().length != 0) {
         if ($('#box_' + ids[0]).children()[0].innerText === to_check &&
           $('#box_' + ids[1]).children()[0].innerText === to_check) {
           return true;
         }
-      }
-      catch(err) {
       }
   }
 };
@@ -126,8 +124,8 @@ var enter_player_response = function(obj) {
     restart();
   }
 
-  if (with_computer) {
-    enter_computer_response();
+  if (with_computer && $('#' + box_id)[0].innerText === "X") {
+    enter_computer_response(box_id);
   }
 };
 
