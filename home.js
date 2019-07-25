@@ -2,6 +2,7 @@ var player_1_score = 0;
 var player_2_score = 0;
 var tie_score = 0;
 var computer_score = 0;
+var with_computer = false;
 
 var response_sequense = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'];
 var game_counter = 0;
@@ -86,6 +87,12 @@ var update_score = function(player) {
     $(".player_2_score_number").html(player_2_score);
     return;
   }
+  else if (player === "computer") {
+    alert("Computer wins");
+    computer_score += 1;
+    $(".computer_score_number").html(computer_score);
+    return;    
+  }
   alert("Game is TIE");
   tie_score += 1;
   $(".tie_score_number").html(tie_score);
@@ -100,11 +107,16 @@ var enter_player_response = function(obj) {
     var who_win = $('#' + box_id)[0].innerText;
 
     if(who_win === "X") {
-      update_score("player_1")
+      update_score("player_1");
       restart();
       return;
     }
-    update_score("player_2")
+    if (!with_computer) {
+      update_score("player_2");
+      restart();
+      return;
+    }
+    update_score("computer");
     restart();
     return;
   }
@@ -113,4 +125,21 @@ var enter_player_response = function(obj) {
     update_score("tie")
     restart();
   }
+
+  if (with_computer) {
+    enter_computer_response();
+  }
 };
+
+
+$(document).ready(function() {
+  change_player_score_text();
+   var num_of_players = number_of_players();
+
+   if (num_of_players === "2") {
+     with_computer = false;
+     return;
+   }
+   with_computer = true;
+   return;
+});

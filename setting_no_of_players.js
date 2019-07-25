@@ -17,6 +17,7 @@ var change_player_score_text = function() {
   }
   $("#player_2_score").css('visibility','hidden');
   $("#computer_score").css('visibility','visible');
+  with_computer = true;
 };
 
 
