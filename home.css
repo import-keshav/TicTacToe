@@ -1,0 +1,109 @@
+body {
+    background-color: black;
+}
+
+.text {
+    color: white;
+}
+
+.main_heading {
+    position: absolute;
+    left: 350px;
+}
+
+.instructions {
+    position: absolute;
+    left: 500px;
+    top: 70px;
+}
+
+.player_box {
+    position: absolute;
+    left: 350px;
+    top: 130px;
+}
+
+.box {
+    height: 70px;
+    width: 70px;
+    border: 5px solid white;
+    border-right-width: 3px
+    margin: 2px;
+}
+
+.row {
+    position: absolute; 
+}
+
+.row_1 {
+    left: 150px;
+}
+
+.row_2 {
+    left: 230px;
+}
+
+.row_3 {
+    left: 310px;
+}
+
+.score_text {
+    font-size: 30px;
+}
+
+#player_1_score {
+    position: absolute;
+    left: 300px;
+    top: 400px;
+}
+
+#tie_score {
+    position: absolute;
+    left: 600px;
+    top: 400px;
+}
+
+#player_2_score {
+    position: absolute;
+    left: 800px;
+    top: 400px;
+}
+
+#computer_score {
+    position: absolute;
+    left: 800px;
+    top: 400px;
+}
+
+.player_1_score_number {
+    margin-left: 50px;
+}
+.tie_score_number {
+    margin-left: 15px;
+}
+
+.player_2_score_number {
+    margin-left: 50px;
+}
+
+.computer_score_number {
+    margin-left: 50px;
+}
+
+.select_box {
+    position: absolute;
+    border-width: none;
+    width: 100px;
+    height: 50px;
+    border-radius: 0px;
+    border-spacing: 0px;
+    top: 230px;
+    left: 300px;
+}
+
+.text_for_selecting_num_players {
+    position: absolute;
+    top: 200px;
+    left: 280px;
+    font-size: 17px;
+}

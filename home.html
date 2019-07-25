@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tic Tac Toe</title>
+        <link rel="stylesheet" type="text/css" href="home.css">
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="home.js"></script>
+        <script type="text/javascript" src="setting_no_of_players.js"></script>
+
+    </head>
+    <body>
+        <h1 class="main_heading text">Welcome to Tic Tac Toe game</h1>
+        <h2 class="instructions text">Start with Player 1</h2>
+
+        <div>
+            <span class="text text_for_selecting_num_players">Select No. Of Players</span>
+            <select class="select_box" id="number_of_player">
+                <option value="2_players" selected="selected"><span class="text">2 Players</span></option>
+                <option value="computer"><span class="text">Computer</span></option>
+            </select>
+        </div>
+
+        <div class="player_box">
+            <div class="row row_1">
+                <div id="box_1" class="box" onclick="enter_player_response(this)"></div>
+                <div id="box_4" class="box" onclick="enter_player_response(this)"></div>
+                <div id="box_7" class="box" onclick="enter_player_response(this)"></div>
+            </div>
+
+            <div class="row row_2">
+                <div id="box_2" class="box" onclick="enter_player_response(this)"></div>
+                <div id="box_5" class="box" onclick="enter_player_response(this)"></div>
+                <div id="box_8" class="box" onclick="enter_player_response(this)"></div>
+            </div>
+
+            <div class="row row_3">
+                <div id="box_3" class="box" onclick="enter_player_response(this)"></div>
+                <div id="box_6" class="box" onclick="enter_player_response(this)"></div>
+                <div id="box_9" class="box" onclick="enter_player_response(this)"></div>
+            </div>
+        </div>
+
+        <div>
+            <div id="player_1_score">
+                <div>
+                    <span class="text score_text">Player 1 (x) </span>
+                </div>
+                <div>
+                    <span class="text score_text player_1_score_number">0</span>
+                </div>
+            </div>
+
+            <div id="tie_score">
+                <div>
+                    <span class="text score_text">Tie</span>
+                </div>
+                <div>
+                    <span class="text score_text tie_score_number">0</span>
+                </div>
+            </div>
+
+            <div id="player_2_score">
+                <div>
+                    <span class="text score_text">Player 2</span>
+                </div>
+                <div>
+                    <span class="text score_text player_2_score_number">0</span>
+                </div>
+            </div>
+
+            <div id="computer_score">
+                <div>
+                    <span class="text score_text" >Computer</span>
+                </div>
+                <div>
+                    <span class="text score_text computer_score_number">0</span>
+                </div>
+            </div>
+        </div>
+        <script>
+            change_player_score_text()
+        </script>
+    </body>
+</html>
