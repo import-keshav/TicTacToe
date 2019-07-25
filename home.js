@@ -3,6 +3,7 @@ var player_2_score = 0;
 var tie_score = 0;
 var computer_score = 0;
 var with_computer = false;
+var last_computer_response_box_id = "";
 
 var response_sequense = ['X', 'O', 'X', 'O', 'X', 'O', 'X', 'O', 'X'];
 var game_counter = 0;
